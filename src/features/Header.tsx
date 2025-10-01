@@ -26,8 +26,8 @@ const Header = () => {
         openMenuButtonColor={theme === "dark" ? "#fff" : "000"}
         changeMenuColorOnOpen={true}
         accentColor="transparent"
-        background={theme === "dark" ? "#171717" : "#e7e7e7"}
-        className="fixed top-0 z-50 tablet:hidden"
+        background={theme === "dark" ? "#171717cc" : "#e7e7e7cc"}
+        className="z-30 fixed top-0 tablet:hidden"
       />
       <DesktopMenu menuItems={menuItems} />
     </>

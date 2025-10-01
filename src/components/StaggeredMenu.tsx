@@ -2,6 +2,7 @@ import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ToggleThemeButton } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
 
 export interface StaggeredMenuItem {
   label: string;
@@ -38,7 +39,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   displaySocials = true,
   displayItemNumbering = true,
   className,
-  logoUrl = "/src/assets/logos/reactbits-gh-white.svg",
   menuButtonColor = "#fff",
   openMenuButtonColor = "#fff",
   changeMenuColorOnOpen = true,
@@ -59,8 +59,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const iconRef = useRef<HTMLSpanElement | null>(null);
 
   const textInnerRef = useRef<HTMLSpanElement | null>(null);
-  const textWrapRef = useRef<HTMLSpanElement | null>(null);
-  const [textLines, setTextLines] = useState<string[]>(["Menu", "Close"]);
+  // const textWrapRef = useRef<HTMLSpanElement | null>(null);
+  // const [textLines, setTextLines] = useState<string[]>(["Menu", "Close"]);
+  
 
   const openTlRef = useRef<gsap.core.Timeline | null>(null);
   const closeTweenRef = useRef<gsap.core.Tween | null>(null);
@@ -365,7 +366,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     if (last !== targetLabel) seq.push(targetLabel);
     seq.push(targetLabel);
 
-    setTextLines(seq);
+    // setTextLines(seq);
     gsap.set(inner, { yPercent: 0 });
 
     const lineCount = seq.length;
@@ -452,13 +453,19 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             className="sm-logo flex items-center select-none pointer-events-auto"
             aria-label="Logo"
           >
-            <p className="font-nova text-2xl border border-primary/50 px-2 hover:scale-110 cursor-pointer flex items-center justify-center w-fit pt-1 rounded-sm transition-all duration-200">
+            <p className="font-super text-2xl border border-primary/50 px-2 hover:scale-110 cursor-pointer flex items-center justify-center w-fit pt-1 rounded-sm transition-all duration-200">
               JG
             </p>
           </div>
           <div className="flex gap-4">
-            <ToggleThemeButton tipo="mobile" />
-            <button
+            <ToggleThemeButton />
+            {open ? (
+              <X size={25} onClick={toggleMenu} className="transition-all duration-200 cursor-pointer"/>
+            ) : (
+              <Menu size={25} onClick={toggleMenu} className="transition-all duration-200 cursor-pointer"/>
+            )}
+
+            {/* <button
               ref={toggleBtnRef}
               className="sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer text-[#e9e9ef] font-medium leading-none overflow-visible pointer-events-auto"
               aria-label={open ? "Close menu" : "Open menu"}
@@ -501,7 +508,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                   className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
                 />
               </span>
-            </button>
+            </button> */}
           </div>
         </header>
 
@@ -532,7 +539,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                     >
                       <span
                         className={cn(
-                          "sm-panel-itemLabel text-5xl inline-block [transform-origin:50%_100%] will-change-transform text-primary"
+                          "sm-panel-itemLabel text-5xl whitespace-nowrap inline-block [transform-origin:50%_100%] will-change-transform text-primary"
                         )}
                       >
                         {it.label}

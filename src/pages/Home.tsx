@@ -1,7 +1,7 @@
-import Footer from "@/features/Footer/Footer";
-import SectionAbout from "@/features/SectionAbout/SectionAbout";
-import SectionIntro from "@/features/SectionIntro/SectionIntro";
-import SectionProjects from "@/features/SectionProjects/SectionProjects";
+import Footer from "@/features/Footer";
+import SectionAbout from "@/features/SectionAbout";
+import SectionIntro from "@/features/SectionIntro";
+import SectionProjects from "@/features/SectionProjects";
 
 const Home = () => {
   return (

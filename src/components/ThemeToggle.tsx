@@ -9,7 +9,7 @@ export function ToggleThemeButton() {
 
   return (
 <>
-    <Switch id="airplane-mode" tipo="desktop" className={"hidden tablet:block"} onClick={toggleTheme} />
-    <Switch id="airplane-mode" tipo="mobile" className={"tablet:hidden"} onClick={toggleTheme} /></>
+    <Switch tipo="desktop" className={"hidden tablet:block"} onClick={toggleTheme} />
+    <Switch tipo="mobile" className={"tablet:hidden"} onClick={toggleTheme} /></>
   );
 }

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider"; // hook do seu ThemeProvider
 
-function Switch({ id, className, tipo }: {id: string, className?: string, tipo: string, onClick?: () => void}) {
+function Switch({ className, tipo }: {className?: string, tipo: string, onClick?: () => void}) {
   const { theme, setTheme } = useTheme();
 
   const checked = theme === "dark";

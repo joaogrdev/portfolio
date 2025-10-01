@@ -13,7 +13,7 @@ const BoxName = () => {
         rootMargin="-100px"
         from={{ opacity: 1, y: 1000 }}
         to={{ opacity: 1, y: 0 }}
-        className={cn("text-8xl tablet:text-9xl laptop:text-[12rem] font-nova pt-10 -mt-10")}
+        className={cn("text-8xl tablet:text-9xl laptop:text-[12rem] font-super pt-10 -mt-10")}
       />
       <SplitText
         text="GABRIEL"
@@ -25,7 +25,7 @@ const BoxName = () => {
         from={{ opacity: 1, y: 1000 }}
         to={{ opacity: 1, y: 0 }}
         className={cn(
-          "text-7xl tablet:text-8xl laptop:text-9xl font-nova -mt-3 tablet:-mt-8"
+          "text-7xl tablet:text-8xl laptop:text-9xl font-super -mt-3 tablet:-mt-8"
         )}
       />
     </div>

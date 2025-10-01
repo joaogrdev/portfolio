@@ -1,0 +1,33 @@
+const BackgroundPattern = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="100%"
+      height="100%"
+      viewBox="0 0 800 400"
+      className="absolute -top-20 tablet:top-0 left-1/2 transform -translate-x-1/2 w-full h-screen min-w-500 mx-auto"
+    >
+      <defs>
+        <linearGradient
+          id="b"
+          gradientUnits="userSpaceOnUse"
+          x1="400"
+          y1="148"
+          x2="400"
+          y2="333"
+        >
+          <stop offset="0" stop-color="#4B4A4A" stop-opacity="0" />
+          <stop offset="1" stop-color="#4B4A4A50" stop-opacity="0.5" />
+        </linearGradient>
+      </defs>
+      <rect fill="url(#a)" width="800" height="400" />
+      <g fill-opacity="0.4">
+        <circle fill="url(#b)" cx="267.5" cy="61" r="300" />
+        <circle fill="url(#b)" cx="532.5" cy="61" r="300" />
+        <circle fill="url(#b)" cx="400" cy="30" r="300" />
+      </g>
+    </svg>
+  );
+};
+
+export default BackgroundPattern;

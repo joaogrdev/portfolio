@@ -1,9 +1,0 @@
-cor1: #383838 - cinza claro
-cor2: #1F1E1C - cinza-escuro
-cor3: #5C0606 - vermelho
-cor4: #9B895B - bege
-
-
-fonte cabeçalho: 
-fonte-destaque: 
-fonte-padrão:

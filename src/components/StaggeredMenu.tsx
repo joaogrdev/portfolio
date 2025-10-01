@@ -452,15 +452,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             className="sm-logo flex items-center select-none pointer-events-auto"
             aria-label="Logo"
           >
-            {/* <img
-              src={logoUrl || '/src/assets/logos/reactbits-gh-white.svg'}
-              alt="Logo"
-              className="sm-logo-img block h-8 w-auto object-contain"
-              draggable={false}
-              width={110}
-              height={24}
-            /> */}
-            <p className="font-nova text-2xl bg-primary text-popover px-2 hover:scale-110 cursor-pointer flex items-center justify-center w-fit pt-1 rounded-sm transition-all duration-200">
+            <p className="font-nova text-2xl border border-primary/50 px-2 hover:scale-110 cursor-pointer flex items-center justify-center w-fit pt-1 rounded-sm transition-all duration-200">
               JG
             </p>
           </div>

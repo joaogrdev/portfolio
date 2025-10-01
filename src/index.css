@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tenor+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=League+Spartan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Tenor+Sans&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @tailwind utilities;
@@ -15,6 +15,8 @@
   --breakpoint-tablet: 768px;
   --breakpoint-laptop: 1024px;
   --breakpoint-desktop: 1200px;
+
+  --color-contrast: #ff8c42;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -104,7 +106,7 @@
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #ffffff1a;
+  --border: #171717;
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -130,7 +132,54 @@
   }
   body {
     @apply bg-background text-foreground;
-    scroll-behavior: smooth;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+      /* transform: translateY(100px); */
+      scale: 0.5;
+    }
+    to {
+      opacity: 1;
+      /* transform: translateY(0); */
+      scale: 1;
+    }
+  }
+
+  .scrollBlock {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30vh;
+  }
+
+  /* Para navegadores Webkit (Chrome, Edge, Safari) */
+  ::-webkit-scrollbar {
+    width: 8px; /* largura da barra */
+    height: 8px; /* altura da barra horizontal, se houver */
+    position: fixed;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #171717; /* fundo da track */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #555; /* cor do "dedo" da barra */
+    border-radius: 10px;
+    transition: background 0.3s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888; /* cor quando hover */
+  }
+
+  /* Para Firefox */
+  * {
+    scrollbar-width: thin; /* "auto", "thin" ou "none" */
+    scrollbar-color: #555 #171717; /* thumb | track */
   }
 }
 

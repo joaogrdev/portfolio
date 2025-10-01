@@ -1,25 +1,35 @@
-import * as React from "react";
 import * as SwitchPrimitive from "@radix-ui/react-switch";
 
 import { cn } from "@/lib/utils";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "@/components/ThemeProvider"; // hook do seu ThemeProvider
 
-function Switch({
-  className,
-  ...props
-}: React.ComponentProps<typeof SwitchPrimitive.Root>) {
+function Switch({ id, className, tipo }: {id: string, className?: string, tipo: string, onClick?: () => void}) {
+  const { theme, setTheme } = useTheme();
+
+  const checked = theme === "dark";
+
   return (
     <SwitchPrimitive.Root
-      data-slot="switch"
+      checked={checked}
+      onCheckedChange={(value) => setTheme(value ? "dark" : "light")}
       className={cn(
-        "peer data-[state=checked]:bg-border data-[state=unchecked]:bg-border focus-visible:border-ring focus-visible:ring-ring/50 dark:data-[state=unchecked]:bg-input/80 inline-flex w-12 shrink-0 items-center rounded-full shadow-xs transition-all outline-none focus-visible:ring-[3px] disabled:cursor-not-allowed disabled:opacity-50 border-2 border-primary dark:border-primary py-px",
-        className
+        "peer relative inline-flex shrink-0 items-center rounded-full border-1 border-primary/50 px-1 transition-colors",
+        "bg-border dark:bg-input/80",
+        className, tipo === "mobile" ? "h-6 w-13" : "h-8 w-17"
       )}
-      {...props}
     >
-      <SwitchPrimitive.Thumb
-        data-slot="switch-thumb"
+      {/* Ícone da Lua (esquerda) */}
+      <Moon className={cn("absolute left-1 text-primary pointer-events-none", tipo === "mobile" ? "size-4" : "size-6")} />
+
+      {/* Ícone do Sol (direita) */}
+      <Sun  className={cn("absolute right-1 text-primary pointer-events-none", tipo === "mobile" ? "size-4" : "size-6")} />
+
+      {/* Bolinha que desliza */}
+      <span
         className={cn(
-          "bg-primary dark:data-[state=unchecked]:bg-foreground dark:data-[state=checked]:bg-primary pointer-events-none block size-5 rounded-full ring-0 transition-transform data-[state=checked]:translate-x-[23px] data-[state=unchecked]:translate-x-[2px]"
+          "block rounded-full bg-primary transition-transform duration-300",
+          checked ? tipo === "mobile" ? "translate-x-6" : "translate-x-8" : "translate-x-0", tipo === "mobile" ? "size-5" : "size-[26px]"
         )}
       />
     </SwitchPrimitive.Root>

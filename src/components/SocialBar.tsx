@@ -2,7 +2,7 @@ import { Github, Linkedin } from "lucide-react";
 
 const SocialBar = () => {
   return (
-    <div className="grid grid-cols-[auto_auto_auto_auto_auto] place-items-center mt-3 border border-primary/25 z-50 rounded-sm">
+    <div className="grid grid-cols-[auto_auto_auto_auto_auto] place-items-center mt-3 border border-primary/25 z-30 rounded-sm">
       <a
         href="https://www.linkedin.com/in/joaogrs/"
         target="_blank"

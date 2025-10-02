@@ -21,7 +21,15 @@ const DesktopMenu = ({
           {/* <p className="font-super text-2xl bg-primary text-popover px-2 hover:scale-110 cursor-pointer flex items-center justify-center w-fit pt-1 rounded-sm transition-all duration-200">
               JG
             </p> */}
-          <p className="font-super text-3xl border border-primary/50 px-2 hover:scale-105 cursor-pointer flex items-center justify-center w-fit pt-1 rounded-sm transition-all duration-200">
+          <p
+            className="font-super text-3xl border border-primary/50 px-2 hover:scale-105 cursor-pointer flex items-center justify-center w-fit pt-1 rounded-sm transition-all duration-200"
+            onClick={() => {
+              const target = document.getElementById("home");
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             JG
           </p>
           <nav className="hidden tablet:flex w-full justify-end flex-1 ">

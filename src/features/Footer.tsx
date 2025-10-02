@@ -12,7 +12,7 @@ const Footer = () => {
         <p className="font-super text-5xl mobile:text-7xl laptop:text-9xl -mt-3 tablet:-mt-5">
           CONECTAR!
         </p>
-        <p className="w-3/4 text-center font-title text-2xl text-border/50 tablet:w-full tablet:text-3xl -mt-3 tablet:-mt-5">
+        <p className="w-3/4 text-center font-title  text-border/50 mobile:w-full text-lg tablet:text-2xl laptop:text-3xl -mt-1 leading-none">
           Adoraria transformar sua ideia em realidade
         </p>
       </div>
@@ -39,10 +39,10 @@ const Footer = () => {
         </a>
 
         <a
-          href="https://github.com/joaogrdev"
+          href="mailto:joaogabrielrsousa@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          title="Github"
+          title="E-mail"
           className="flex w-full h-full p-2 rounded-md border border-border transition-all cursor-pointer items-center justify-center hover:text-primary hover:bg-border duration-200"
         >
           <Mail size={25} />

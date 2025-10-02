@@ -3,11 +3,13 @@ import { gsap } from "gsap";
 import { ToggleThemeButton } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import SocialBar from "./SocialBar";
 
 export interface StaggeredMenuItem {
   label: string;
   ariaLabel: string;
   link: string;
+  id: string;
 }
 export interface StaggeredMenuSocialItem {
   label: string;
@@ -29,6 +31,7 @@ export interface StaggeredMenuProps {
   onMenuOpen?: () => void;
   onMenuClose?: () => void;
   background?: string;
+  id?: string;
 }
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
@@ -61,7 +64,6 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   const textInnerRef = useRef<HTMLSpanElement | null>(null);
   // const textWrapRef = useRef<HTMLSpanElement | null>(null);
   // const [textLines, setTextLines] = useState<string[]>(["Menu", "Close"]);
-  
 
   const openTlRef = useRef<gsap.core.Timeline | null>(null);
   const closeTweenRef = useRef<gsap.core.Tween | null>(null);
@@ -446,23 +448,39 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         </div>
 
         <header
-          className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
+          className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em]  pointer-events-none z-20 !fixed !bg-border z-50 !py-5"
           aria-label="Main navigation header"
         >
           <div
             className="sm-logo flex items-center select-none pointer-events-auto"
             aria-label="Logo"
           >
-            <p className="font-super text-2xl border border-primary/50 px-2 hover:scale-110 cursor-pointer flex items-center justify-center w-fit pt-1 rounded-sm transition-all duration-200">
+            <p
+              className="font-super text-2xl border border-primary/50 px-2 hover:scale-110 cursor-pointer flex items-center justify-center w-fit pt-1 rounded-sm transition-all duration-200"
+              onClick={() => {
+                const target = document.getElementById("home");
+                if (target) {
+                  target.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+            >
               JG
             </p>
           </div>
           <div className="flex gap-4">
             <ToggleThemeButton />
             {open ? (
-              <X size={25} onClick={toggleMenu} className="transition-all duration-200 cursor-pointer"/>
+              <X
+                size={25}
+                onClick={() => toggleMenu()}
+                className="transition-all duration-200 cursor-pointer"
+              />
             ) : (
-              <Menu size={25} onClick={toggleMenu} className="transition-all duration-200 cursor-pointer"/>
+              <Menu
+                size={25}
+                onClick={() => toggleMenu()}
+                className="transition-all duration-200 cursor-pointer"
+              />
             )}
 
             {/* <button
@@ -515,11 +533,14 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px]"
-          style={{ WebkitBackdropFilter: "blur(12px)" }}
+          className="staggered-menu-panel !fixed top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 backdrop-blur-[12px]"
+          style={{
+            WebkitBackdropFilter: "blur(12px)",
+            display: open ? "flex" : "none",
+          }}
           aria-hidden={!open}
         >
-          <div className="sm-panel-inner flex-1 flex flex-col gap-5 mt-5">
+          <div className="sm-panel-inner flex-1 flex flex-col justify-between gap-5 mt-5">
             <ul
               className="sm-panel-list list-none m-0 p-0 flex flex-col gap-2"
               role="list"
@@ -531,9 +552,15 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                     className="sm-panel-itemWrap relative overflow-hidden leading-none"
                     key={it.label + idx}
                   >
-                    <a
+                    <button
                       className="sm-panel-item relative text-black font-semibold text-[4rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em] font-title"
-                      href={it.link}
+                      onClick={() => {
+                        const target = document.getElementById(it.id);
+                        if (target) {
+                          target.scrollIntoView({ behavior: "smooth" });
+                        }
+                        toggleMenu();
+                      }}
                       aria-label={it.ariaLabel}
                       data-index={idx + 1}
                     >
@@ -544,7 +571,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                       >
                         {it.label}
                       </span>
-                    </a>
+                    </button>
                   </li>
                 ))
               ) : (
@@ -561,7 +588,9 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               )}
             </ul>
 
-            <div className="flex items-end justify-between mt-auto">
+            <SocialBar />
+
+            {/* <div className="flex items-end justify-between mt-auto">
               {displaySocials && socialItems && socialItems.length > 0 && (
                 <div
                   className="sm-socials mt-auto pt-8 flex flex-col gap-3"
@@ -576,14 +605,14 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                   >
                     {socialItems.map((s, i) => (
                       <li key={s.label + i} className="sm-socials-item">
-                        {/* <a
+                        <a
                           href={s.link}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="sm-socials-link text-[1.2rem] font-medium text-[#111] no-underline relative inline-block py-[2px] transition-[color,opacity] duration-300 ease-linear"
                         >
                           {s.label}
-                        </a> */}
+                        </a>
                         <a
                           href={s.link}
                           target="_blank"
@@ -597,7 +626,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                   </ul>
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
         </aside>
       </div>

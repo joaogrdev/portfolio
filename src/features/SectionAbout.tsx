@@ -15,8 +15,8 @@ const SectionAbout = () => {
           <blockquote className="tablet:pl-4 text-base tablet:text-lg text-primary font-base font-light text-justify border-0 tablet:border-l-4 border-primary/40">
             Desenvolvedor frontend com 3 anos de
             experiência criando interfaces digitais modernas e intuitivas. Ao
-            longo da minha jornada, participei de mais de 20 projetos — de
-            e-commerces a sistemas financeiros — sempre com foco em performance,
+            longo da minha jornada, participei de mais de 20 projetos - de
+            e-commerces a sistemas financeiros - sempre com foco em performance,
             usabilidade e entrega de valor. Acredito que tecnologia é sobre
             transformar ideias em soluções que realmente fazem diferença para
             pessoas e negócios, e é nesse equilíbrio entre técnica e

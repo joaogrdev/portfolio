@@ -1,0 +1,97 @@
+{
+  "hash": "ce3cefdf",
+  "configHash": "d598feed",
+  "lockfileHash": "e1822a54",
+  "browserHash": "3c249052",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "87449418",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "8e6396a2",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "b75ff9b8",
+      "needsInterop": true
+    },
+    "lucide-react": {
+      "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
+      "file": "lucide-react.js",
+      "fileHash": "6bf36358",
+      "needsInterop": false
+    },
+    "clsx": {
+      "src": "../../node_modules/clsx/dist/clsx.mjs",
+      "file": "clsx.js",
+      "fileHash": "3a89c831",
+      "needsInterop": false
+    },
+    "tailwind-merge": {
+      "src": "../../node_modules/tailwind-merge/dist/bundle-mjs.mjs",
+      "file": "tailwind-merge.js",
+      "fileHash": "886f543f",
+      "needsInterop": false
+    },
+    "gsap": {
+      "src": "../../node_modules/gsap/index.js",
+      "file": "gsap.js",
+      "fileHash": "d4c2cf01",
+      "needsInterop": false
+    },
+    "gsap/ScrollTrigger": {
+      "src": "../../node_modules/gsap/ScrollTrigger.js",
+      "file": "gsap_ScrollTrigger.js",
+      "fileHash": "5a561930",
+      "needsInterop": false
+    },
+    "gsap/SplitText": {
+      "src": "../../node_modules/gsap/SplitText.js",
+      "file": "gsap_SplitText.js",
+      "fileHash": "fa110bc3",
+      "needsInterop": false
+    },
+    "@gsap/react": {
+      "src": "../../node_modules/@gsap/react/src/index.js",
+      "file": "@gsap_react.js",
+      "fileHash": "bc38e737",
+      "needsInterop": false
+    },
+    "@radix-ui/react-switch": {
+      "src": "../../node_modules/@radix-ui/react-switch/dist/index.mjs",
+      "file": "@radix-ui_react-switch.js",
+      "fileHash": "b203949e",
+      "needsInterop": false
+    },
+    "@radix-ui/react-accordion": {
+      "src": "../../node_modules/@radix-ui/react-accordion/dist/index.mjs",
+      "file": "@radix-ui_react-accordion.js",
+      "fileHash": "748dc09d",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-EMMQK55Z": {
+      "file": "chunk-EMMQK55Z.js"
+    },
+    "chunk-FYGYNQUM": {
+      "file": "chunk-FYGYNQUM.js"
+    },
+    "chunk-32EALFBN": {
+      "file": "chunk-32EALFBN.js"
+    },
+    "chunk-M5XIBDSQ": {
+      "file": "chunk-M5XIBDSQ.js"
+    },
+    "chunk-G3PMV62Z": {
+      "file": "chunk-G3PMV62Z.js"
+    }
+  }
+}

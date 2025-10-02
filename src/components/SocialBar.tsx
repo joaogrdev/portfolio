@@ -1,4 +1,5 @@
 import { Github, Linkedin } from "lucide-react";
+import curriculo from "../assets/dev-frontend-joao-gabriel-ribeiro.pdf";
 
 const SocialBar = () => {
   return (
@@ -28,7 +29,9 @@ const SocialBar = () => {
       <div className="w-px h-3/4 bg-primary/25"></div>
 
       <a
-        href="#"
+        href={curriculo}
+        target="_blank"
+        rel="noopener noreferrer"
         title="Baixar Currículo"
         className="flex items-center justify-center w-full h-full rounded-r-md font-title text-primary hover:bg-primary hover:text-secondary transition-all duration-200 px-4 pt-2 py-1 text-sm"
       >

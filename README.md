@@ -2,6 +2,8 @@
 
 Este é meu novo portfólio pessoal, que marca a evolução da minha jornada como desenvolvedor front-end. Diferente da primeira versão criada em 2022, este projeto reflete não apenas um design mais moderno, mas também todo o conhecimento técnico que adquiri ao longo do tempo.
 
+<a href="https://joaogrdev.github.io/portfolio" target="_blank">Portfólio - 2025</a>
+
 ## 🚀 Tecnologias utilizadas
 
 - **React + TypeScript** — Componentização reutilizável e tipagem segura

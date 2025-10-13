@@ -7,7 +7,7 @@ const BoxDescription = () => {
       duration={300}
       easing="ease-out"
       initialOpacity={0}
-      delay={800}
+      delay={600}
       className="flex flex-col tablet:flex-row tablet:gap-3 items-center justify-center pt-5"
     >
       <p className="font-thin tex-center self-center font-contrast text-3xl whitespace-break-spaces laptop:text-[40px] -mt-4">

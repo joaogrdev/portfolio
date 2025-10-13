@@ -2,11 +2,21 @@ import printLosPollosFritos from "../assets/mock-los-pollos-fritos.png";
 import printPortolioV1 from "../assets/mock-portfoliov1.png";
 import printCineradar from "../assets/mock-cineradar.png";
 import printTodoList from "../assets/mock-todolist.png";
+import printDotflix from "../assets/mock-dotflix.png";
 
 export const getProjetos = () => {
   return [
     {
       id: 1,
+      nome: "DOTFlix",
+      link: "https://dotflix-xi.vercel.app/",
+      github: "https://github.com/joaogrdev/dotflix",
+      img: printDotflix,
+      desc: "Descrição do Projeto 1",
+      tecnologias: ["React", "TypeScript", "Tailwind", "Zustand"],
+    },
+    {
+      id: 2,
       nome: "Los Pollos Fritos",
       link: "https://los-pollos-fritos.vercel.app",
       github: "https://github.com/joaogrdev/los-pollos-fritos",
@@ -15,7 +25,7 @@ export const getProjetos = () => {
       tecnologias: ["React", "TypeScript", "Tailwind", "Firebase"],
     },
     {
-      id: 2,
+      id: 3,
       nome: "Advanced Todo List",
       link: "https://joaogrdev.github.io/advanced-todo-list/",
       github: "https://github.com/joaogrdev/advanced-todo-list",
@@ -24,7 +34,7 @@ export const getProjetos = () => {
       tecnologias: ["React", "Tailwind", "Zustand"],
     },
     {
-      id: 3,
+      id: 4,
       nome: "CineRadar",
       link: "https://joaogrdev.github.io/cineradar/",
       github: "https://github.com/joaogrdev/cineradar",
@@ -33,7 +43,7 @@ export const getProjetos = () => {
       tecnologias: ["React", "API Rest"],
     },
     {
-      id: 4,
+      id: 5,
       nome: "Portfólio Versão 1",
       link: "https://joaogrdev.github.io/portfolio/",
       github: "https://github.com/joaogrdev/portfolio",

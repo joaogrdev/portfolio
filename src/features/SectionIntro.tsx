@@ -8,7 +8,7 @@ const SectionIntro = () => {
   return (
     <section
       id="home"
-      className="grid grid-rows-[auto_1fr] overflow-x-hidden h-screen place-items-center relative"
+      className="grid grid-rows-[auto_1fr] overflow-hidden h-screen place-items-center relative"
     >
       <Header />
       <div className="overflow-x-hidden w-full h-full absolute top-0 left-0">

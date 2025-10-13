@@ -15,7 +15,7 @@ const DesktopMenu = ({
         duration={1.5}
         ease="power3.out"
         initialOpacity={1}
-        delay={1}
+        delay={0.6}
       >
         <div className="px-10 py-5 grid grid-cols-[100px_1fr_100px] place-items-center">
           {/* <p className="font-super text-2xl bg-primary text-popover px-2 hover:scale-110 cursor-pointer flex items-center justify-center w-fit pt-1 rounded-sm transition-all duration-200">
